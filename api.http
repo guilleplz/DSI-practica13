@@ -1,0 +1,93 @@
+### Creando carta
+
+POST http://localhost:3000/cards
+Content-Type: application/json
+
+{
+  "name": "carta1",
+  "manacost": 23,
+  "color": "azul",
+  "timeline": "criatura",
+  "rarity": "comun",
+  "strength": [2, 3],
+  "rules": "reglas de la carta 1",
+  "value": 2000
+}
+
+### Creando carta 2
+
+POST http://localhost:3000/cards
+Content-Type: application/json
+
+{
+  "name": "carta2",
+  "manacost": 33,
+  "color": "rojo",
+  "timeline": "encantamiento",
+  "rarity": "rara",
+  "rules": "reglas de la carta 2",
+  "value": 100
+}
+
+### Creando carta 3
+
+POST http://localhost:3000/cards
+Content-Type: application/json
+
+{
+  "name": "carta3",
+  "manacost": 2,
+  "color": "multicolor",
+  "timeline": "tierra",
+  "rarity": "mitica",
+  "rules": "reglas de la carta 3",
+  "value": 100000
+}
+
+### Obtener todas las cartas
+
+GET http://localhost:3000/cards
+
+### Obtener las cartas filtradas por nombre
+
+GET http://localhost:3000/cards?name=carta1
+
+
+### Otra menera de obtener la carta por su nombre
+
+GET http://localhost:3000/cards/carta2
+
+
+### Actualizar una carta
+
+PATCH http://localhost:3000/cards?name=carta1
+Content-Type: application/json
+
+{
+  "name": "carta1",
+  "manacost": 2783,
+  "color": "rojo",
+  "timeline": "encantamiento",
+  "rarity": "rara",
+  "rules": "esta carta ha sido actualizada",
+  "value": 100
+}
+
+### Otra forma de actualizar una carta
+
+PATCH http://localhost:3000/cards/carta2
+Content-Type: application/json
+
+{
+  "name": "carta2",
+  "manacost": 231,
+  "color": "verde",
+  "timeline": "encantamiento",
+  "rarity": "rara",
+  "rules": "esta carta ha sido actualizada",
+  "value": 100
+}
+
+### Eliminar una carta según su nombre
+
+DELETE http://localhost:3000/cards?name=carta3
